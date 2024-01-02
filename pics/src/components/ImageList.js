@@ -1,4 +1,4 @@
-function ImageList() {
+function ImageList({ images }) {
     return <div>Image List</div>
 }
 
