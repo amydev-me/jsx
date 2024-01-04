@@ -1,14 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
+import axios from 'axios';
 
 function App() {
     const [books, setBooks] = useState([]);
 
-    const createBook = (title) => {
+    /**
+     * second argument is [] = Called after first render, never called again
+     * second argument is -  = Called after first render, also called after every renender
+     * second argument is counter = Called after first render, also called after renenders if 'counter' variable changed
+     */
+    useEffect(() => {
+        fetchBooks();
+    }, [])
+
+    const fetchBooks = async () => {
+        const { data } = await axios.get('http://localhost:3001/books');
+        setBooks(data);
+    }
+
+    const createBook = async (title) => {
+        const { data } = await axios.post('http://localhost:3001/books',{title});
+        
         const updatedBooks = [
             ...books, 
-            { id: Math.round(Math.random() * 9999), title }
+            data
         ];
 
         setBooks(updatedBooks);
