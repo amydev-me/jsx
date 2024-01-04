@@ -7,8 +7,8 @@ function App() {
     const [books, setBooks] = useState([]);
 
     /**
-     * second argument is [] = Called after first render, never called again
-     * second argument is -  = Called after first render, also called after every renender
+     * second argument is []      = Called after first render, never called again
+     * second argument is -       = Called after first render, also called after every renender
      * second argument is counter = Called after first render, also called after renenders if 'counter' variable changed
      */
     useEffect(() => {
