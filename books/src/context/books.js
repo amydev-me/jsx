@@ -33,19 +33,19 @@ function Provider({ children }) {
   };
 
   const editBookById = async (id, newTitle) => {
-      const { data } = await axios.put(`http://localhost:3001/books/${id}`,{
-          title: newTitle
-      });
-      
-      const updatedBooks = books.map((book) => {
-          if(book.id === id){ 
-              return { ...book, ...data };
-          }
+    const response = await axios.put(`http://localhost:3001/books/${id}`, {
+      title: newTitle,
+    });
+ 
+    const updatedBooks = books.map((book) => {
+      if (book.id === id) {
+        return { ...book, ...response.data };
+      }
 
-          return book;
-      });
+      return book;
+    });
 
-      setBooks(updatedBooks);
+    setBooks(updatedBooks);
   };
 
   const valueToShare = {
