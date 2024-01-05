@@ -1,8 +1,11 @@
 {
   "books": [
     {
-      "title": "The marvels",
+      "title": "The Marvels",
       "id": 1
+    },
+    {
+      "id": 2
     }
   ]
 }
