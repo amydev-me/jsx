@@ -12,7 +12,7 @@ function BookEdit({ book, onUpdate }) {
     const handleSubmit = (event) => { 
         event.preventDefault();
         onUpdate();
-        editBookById(book.id);
+        editBookById(book.id, title);
     }
 
     return ( 
