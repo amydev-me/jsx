@@ -26,7 +26,7 @@ function Button({
     'text-red-700': outline && danger,
   });
 
-  return <button className={classes}>{children}</button>;
+  return <button {...rest} className={classes}>{children}</button>;
 }
 
 Button.propTypes = {
