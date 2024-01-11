@@ -1,6 +1,16 @@
+import { useSelector, useDispatch } from 'react-redux'
+
+
 function CarList() {
+
+    const cars = useSelector((state) => {
+        return {
+            cars : state.cars.cars
+        };
+    });
+
     return (
-        <div></div>
+        <div>Total Cars: {cars.length}</div>
     );
 }
 
