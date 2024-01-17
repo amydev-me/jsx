@@ -14,6 +14,16 @@
       "id": 10,
       "title": "Hiking Trip",
       "userId": 1
+    },
+    {
+      "id": "c97f",
+      "userId": 1,
+      "title": "Handmade Metal Hat"
+    },
+    {
+      "id": "20b5",
+      "userId": 1,
+      "title": "Ergonomic Cotton Towels"
     }
   ],
   "phptos": []
